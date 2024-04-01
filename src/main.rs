@@ -97,7 +97,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-// Unit Tests for verfiy_passowrd Function. Use cargo test to run the tests 
+// Unit Tests for verfiy_passowrd Function. Use command "cargo test" to run the tests 
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -107,7 +107,7 @@ mod tests {
     fn test_verify_password_correct() {
         let argon2 = Argon2::default();
         let password = "secret_password";
-        // This example directly hashes a password for testing. In practice, you'd retrieve this from your storage mechanism.
+        // This example directly hashes a password for testing.
         let salt = SaltString::generate(&mut rand::thread_rng());
         let password_hash_str = argon2.hash_password(password.as_bytes(), &salt).unwrap().to_string();
         let parsed_hash = PasswordHash::new(&password_hash_str).unwrap();
