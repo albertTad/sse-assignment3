@@ -97,6 +97,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+// Unit Tests for verfiy_passowrd Function. Use cargo test to run the tests 
 #[cfg(test)]
 mod tests {
     use super::*;
